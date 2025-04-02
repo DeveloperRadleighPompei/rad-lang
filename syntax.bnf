@@ -1,0 +1,36 @@
+<program> ::= <statements>
+
+<statements> ::= <statement> | <statement> <statements>
+
+<statement> ::= <declaration> | <assignment> | <if_statement> | <loop> | <function_def> | <function_call>
+
+<type> ::= "int" | "float" | "string" | "bool"
+
+<declaration> ::= <type> <identifier> "=" <expression> ";"
+
+<assignment> ::= <identifier> "=" <expression> ";"
+
+<if_statement> ::= "if" "(" <expression> ")" "{" <statements> "}"
+
+<loop> ::= "while" "(" <expression> ")" "{" <statements> "}"
+
+<function_def> ::= <type> <identifier> "(" <parameter_list> ")" "{" <statements> "}"
+<parameter_list> ::= <parameter> | <parameter> "," <parameter_list> 
+<parameter> ::= <type> <identifier>
+
+<function_call> ::= <identifier> "(" <arguments> ")" ";"
+<arguments> ::= <expression> | <expression> "," <arguments> 
+
+<expression> ::= <term> | <expression> "+" <term> | <expression> "-" <term>
+               | <expression> "*" <term> | <expression> "/" <term>
+
+<term> ::= <number> | <identifier> | "(" <expression> ")"
+
+<identifier> ::= <letter> | <identifier> <letter> | <identifier> <digit>
+
+<number> ::= <digit> | <digit> <number>
+
+<letter> ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" 
+           | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" 
+
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
